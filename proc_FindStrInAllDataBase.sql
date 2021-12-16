@@ -46,7 +46,6 @@ BEGIN
    END IF;
    -- 这里做你想做的循环的事件
    SET @sqlstr=CONCAT('select count(1) into @rn from ',tmp_dbname,'.`',tmp_tbname,'` where `',tmp_colname,'` like ''%',p_finstr,'%''');
-   select @sqlstr;
    PREPARE str FROM @sqlstr;  
    EXECUTE str;   
    DEALLOCATE PREPARE str;
